@@ -1,0 +1,81 @@
+/* App.css */
+
+/* تنسيق الجذر العام */
+#root {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f3ef; /* لون تمر سكري هادئ */
+  font-family: 'Cairo', sans-serif; /* خط عربي جميل */
+  direction: rtl; /* لأنك تستهدف جمهور عربي */
+}
+
+/* الجسم */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: #f9f3ef; /* لون تمر فاتح */
+  color: #1e1e1e;
+  direction: rtl;
+  scroll-behavior: smooth; /* ✅ للتمرير السلس */
+}
+
+/* اللوجو */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #a17241aa); /* ظل بلون تمر */
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* حركة دوران للوجو */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* كروت */
+.card {
+  padding: 2em;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+/* نصوص فرعية */
+.read-the-docs {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* كلاس عام لتوسيط العناصر */
+.app-container {
+  text-align: center;
+}
+
+/* 📱 استجابة للموبايل */
+@media (max-width: 768px) {
+  #root {
+    padding: 0;
+  }
+
+  .card {
+    padding: 1.2em;
+  }
+}

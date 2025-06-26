@@ -1,0 +1,126 @@
+.hero-section {
+  background-size: cover;
+  background-position: center 70%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding: 6rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-bottom: 3px solid #8b5d3b;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تعتيم خلفي */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+/* محتوى النص */
+.hero-text-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 850px;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #fff4e6;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.brand {
+  color: #ffd7a0;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #ffe6cc;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* زر */
+.hero-section a.btn {
+  z-index: 3;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #6f4e37;
+  border: none;
+  transition: all 0.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section a.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #a17241, #d9b790, #8b5d3b);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s ease-in-out;
+  z-index: -1;
+  border-radius: inherit;
+}
+
+.hero-section a.btn:hover::before {
+  transform: scaleX(1);
+}
+
+.hero-section a.btn:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+/* ✅ تجاوب الموبايل */
+@media (max-width: 768px) {
+  .hero-section {
+    height: auto;
+    padding: 4rem 1rem 2rem;
+  }
+
+  .hero-text-box {
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .brand {
+    font-size: 2.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-section a.btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+  }
+}

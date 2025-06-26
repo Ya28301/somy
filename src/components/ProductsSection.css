@@ -1,0 +1,159 @@
+.products-section {
+  padding: 60px 20px;
+  background-color: #f9f1e6;
+  text-align: center;
+}
+
+.products-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #5a3510;
+}
+
+.products-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.product-card {
+  position: relative;
+  width: 280px;
+  overflow: hidden;
+  border-radius: 14px;
+  transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.product-name {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.35);
+  padding: 4px 0;
+  z-index: 2;
+}
+
+/* ✅ معلومات المنتج: مخفية بالأساس */
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 12px;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ✅ إظهار عند النقر (من خلال الكلاس show-info) */
+.product-card.show-info .product-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #f0d9b5;
+  margin-bottom: 10px;
+}
+
+/* زر واتساب */
+.whatsapp-button {
+  background-color: #b97b50;
+  color: white;
+  padding: 6px 16px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  direction: rtl;
+}
+
+.whatsapp-button:hover {
+  background-color: #a56643;
+}
+
+/* أيقونة الواتساب */
+.whatsapp-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-button:hover .whatsapp-icon {
+  transform: scale(1.1);
+}
+
+/* ✅ استجابة للجوال */
+@media (max-width: 768px) {
+  .products-title {
+    font-size: 1.6rem;
+  }
+
+  .products-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  .product-image {
+    height: 180px;
+  }
+
+  .product-name {
+    font-size: 0.8rem;
+  }
+
+  .product-price {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-button {
+    font-size: 0.8rem;
+    padding: 5px 12px;
+  }
+
+  .whatsapp-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
